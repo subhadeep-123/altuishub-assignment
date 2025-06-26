@@ -1,6 +1,6 @@
 import heapq
 
-class LinkedNode:
+class ListNodes:
     def __init__(self, val=0, next=None):
         self.val = val
         self.next = next
@@ -18,7 +18,7 @@ def mergeKLists(lists):
         if l:
             heapq.heappush(heap, l)
 
-    dummy = LinkedNode(0)
+    dummy = ListNodes(0)
     curr = dummy
 
     # Pop the smallest element from the heap
