@@ -37,8 +37,24 @@ def mergeKLists(lists):
 def build_linked_lists(values):
     head = ListNodes(values[0])
     current = head
-    for v in values[1]:
+    for v in values[1:]:
         current.next = ListNodes(v)
         current = current.next
 
     return head
+
+
+if __name__ == '__main__':
+    lists = [
+        build_linked_lists([1, 4, 5]),
+        build_linked_lists([1, 3, 4]),
+        build_linked_lists([2, 6])
+    ]
+
+    merged = mergeKLists(lists)
+    
+    # Print the merged lists
+    while merged:
+        print(merged.val, end = " -> " if merged.next else "\n")
+        merged = merged.next
+
