@@ -7,7 +7,7 @@ class ListNodes:
 
     def __lt__(self, other):
         # For heapq to compare the nodes
-        return self.val > other.val
+        return self.val < other.val
     
 
 def mergeKLists(lists):
