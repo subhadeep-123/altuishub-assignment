@@ -1,4 +1,3 @@
-from django.contrib.gis.db import models as geomodels
 from django.db import models
 
 
@@ -22,5 +21,5 @@ class Apartment(models.Model):
     title = models.CharField(max_length=255)
     price = models.IntegerField()
     bedroom_type = models.CharField(choices=BEDROOM_CHOICES, max_length=5)
-    location = geomodels.PointField(geography=True)  # Longitude/Latitude
+    location = models.CharField(max_length=255)
     listed_by = models.ForeignKey(User, on_delete=models.CASCADE)
