@@ -32,3 +32,13 @@ def mergeKLists(lists):
             heapq.heappush(heap,node.next)
 
     return dummy.next
+
+# Helper Scripts
+def build_linked_lists(values):
+    head = ListNodes(values[0])
+    current = head
+    for v in values[1]:
+        current.next = ListNodes(v)
+        current = current.next
+
+    return head
